@@ -30,7 +30,7 @@ const About = () => {
       degree: 'Secondary School (SSC)',
       institution: 'Vijaya High School',
       grade: 'CGPA: 9.2',
-      year: '2009 - 2019',
+      year: '2009 - 2018',
     },
   ];
 

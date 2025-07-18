@@ -29,7 +29,6 @@ function App() {
           <Achievements />
           <Contact />
           <ScrollToTop />
-
         </div>
       </ScrollProvider>
     </ThemeProvider>
