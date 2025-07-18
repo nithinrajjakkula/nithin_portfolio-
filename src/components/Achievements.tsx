@@ -12,7 +12,7 @@ const Achievements = () => {
         'Demonstrated exceptional skills in digital forensics and cybersecurity analysis during this intensive hackathon.',
       icon: <Trophy className="w-8 h-8 text-yellow-500" />,
       gradient: 'from-yellow-400 to-orange-500',
-      date: '2024',
+      date: '2023',
       skills: ['Digital Forensics', 'Cybersecurity', 'Problem Solving', 'Analysis'],
     },
     {
@@ -23,7 +23,7 @@ const Achievements = () => {
         'Secured third position in a competitive data science and analytics quiz, showcasing strong analytical and data science fundamentals.',
       icon: <Award className="w-8 h-8 text-blue-500" />,
       gradient: 'from-blue-400 to-purple-500',
-      date: '2024',
+      date: '2025',
       skills: ['Data Science', 'Analytics', 'Machine Learning', 'Statistics'],
     },
     {
@@ -34,7 +34,7 @@ const Achievements = () => {
         'Maintained consistent academic performance throughout BTech program in Computer Science.',
       icon: <Star className="w-8 h-8 text-green-500" />,
       gradient: 'from-green-400 to-teal-500',
-      date: '2020–2024',
+      date: '2021–2025',
       skills: ['Computer Science', 'Programming', 'Software Engineering', 'Data Structures'],
     },
     {

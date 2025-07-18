@@ -18,19 +18,19 @@ const About = () => {
       degree: 'B.Tech in Computer Science',
       institution: 'Malla Reddy University, Hyderabad',
       grade: 'CGPA: 8.68',
-      year: '2020 - 2024',
+      year: '2021 - 2025',
     },
     {
       degree: 'Intermediate (MPC)',
       institution: 'Sri Chaitanya Junior College',
       grade: '74%',
-      year: '2018 - 2020',
+      year: '2019 - 2021',
     },
     {
       degree: 'Secondary School (SSC)',
       institution: 'Vijaya High School',
       grade: 'CGPA: 9.2',
-      year: '2017 - 2018',
+      year: '2009 - 2019',
     },
   ];
 
