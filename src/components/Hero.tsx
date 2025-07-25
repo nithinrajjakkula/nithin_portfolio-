@@ -53,7 +53,7 @@ const Hero = () => {
             Hi, I'm{' '}
             <span className="text-yellow-400 block sm:inline">Jakkula Nithin Raj</span>
           </motion.h1>
-
+          
           <motion.p
             className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 font-light px-4"
             initial={{ opacity: 0, y: 50 }}
@@ -62,31 +62,31 @@ const Hero = () => {
           >
             IT Enthusiast | Problem Solver | Developer
           </motion.p>
+          
+         <motion.div
+  className="mb-8 sm:mb-12 flex flex-col sm:flex-row justify-center items-center gap-4"
+  initial={{ opacity: 0, y: 50 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, delay: 0.6 }}
+>
+  <button
+    onClick={() => scrollToSection('projects')}
+    className="bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+  >
+    Explore My Work
+  </button>
 
-          <motion.div
-            className="mb-8 sm:mb-12 flex flex-col sm:flex-row justify-center items-center gap-4"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            <button
-              onClick={() => scrollToSection('projects')}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
-            >
-              Explore My Work
-            </button>
+  <a
+    href="https://flowcv.com/resume/frwm61f3fsmu"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="bg-white text-blue-600 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold border border-blue-600 hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg"
+  >
+    Download Resume
+  </a>
+</motion.div>
 
-            <a
-              href="https://flowcv.com/resume/frwm61f3fsmu"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white text-blue-600 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold border border-blue-600 hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg"
-            >
-              Download Resume
-            </a>
-          </motion.div>
-
-
+          
           <motion.div
             className="flex justify-center space-x-4 sm:space-x-6"
             initial={{ opacity: 0, y: 50 }}
@@ -94,7 +94,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
           >
             <a
-              href="https://www.linkedin.com/in/jakkulanithinraj2003"
+              href="https://linkedin.com/in/nithinraj"
               className="p-2 sm:p-3 bg-white/20 rounded-full hover:bg-white/30 transition-all duration-300 transform hover:scale-110"
             >
               <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />
