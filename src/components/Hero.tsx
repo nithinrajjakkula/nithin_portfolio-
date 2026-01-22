@@ -121,7 +121,7 @@ const Hero = () => {
     href="https://flowcv.com/resume/frwm61f3fsmu"
     target="_blank"
     rel="noopener noreferrer"
-    className="bg-white/10 backdrop-blur-md text-white px-8 sm:px-10 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold border-2 border-white/30 hover:bg-white/20 transition-all duration-300 shadow-xl hover:shadow-2xl relative overflow-hidden group"
+    className="glass-btn text-white px-8 sm:px-10 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold border-2 border-white/30 hover:border-white/50 transition-all duration-300 shadow-xl hover:shadow-2xl relative overflow-hidden group"
     whileHover={{ scale: 1.05 }}
     whileTap={{ scale: 0.95 }}
   >
@@ -140,29 +140,29 @@ const Hero = () => {
               href="https://www.linkedin.com/in/jakkulanithinraj2003"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 sm:p-4 bg-white/10 backdrop-blur-md rounded-full hover:bg-white/20 border border-white/20 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="p-3 sm:p-4 glass-btn rounded-full border border-white/30 hover:border-white/50 transition-all duration-300 shadow-lg hover:shadow-xl"
               whileHover={{ scale: 1.15, rotate: 5 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />
+              <Linkedin className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
             </motion.a>
             <motion.a
               href="https://github.com/nithinrajjakkula"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 sm:p-4 bg-white/10 backdrop-blur-md rounded-full hover:bg-white/20 border border-white/20 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="p-3 sm:p-4 glass-btn rounded-full border border-white/30 hover:border-white/50 transition-all duration-300 shadow-lg hover:shadow-xl"
               whileHover={{ scale: 1.15, rotate: -5 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Github className="w-5 h-5 sm:w-6 sm:h-6" />
+              <Github className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
             </motion.a>
             <motion.a
               href="mailto:nithinrajjakkula@gmail.com"
-              className="p-3 sm:p-4 bg-white/10 backdrop-blur-md rounded-full hover:bg-white/20 border border-white/20 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="p-3 sm:p-4 glass-btn rounded-full border border-white/30 hover:border-white/50 transition-all duration-300 shadow-lg hover:shadow-xl"
               whileHover={{ scale: 1.15, rotate: 5 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
+              <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
             </motion.a>
           </motion.div>
         </motion.div>

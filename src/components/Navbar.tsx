@@ -28,7 +28,7 @@ const Navbar = () => {
 
   return (
     <motion.nav
-      className="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg border-b border-gray-200/50 dark:border-gray-800/50 shadow-sm"
+      className="fixed top-0 left-0 right-0 z-50 glass-navbar"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
@@ -36,16 +36,23 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <img
-              src="https://i.postimg.cc/TwQB4NWy/Nithin-img.png"
-              alt="Jakkula Nithin Raj"
-              className="w-10 h-10 rounded-full object-cover border-2 border-blue-500"
-            />
-            <span className="text-xl font-bold text-gray-900 dark:text-white">
+          <motion.div 
+            className="flex items-center space-x-3 glass-logo"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.2 }}
+          >
+            <div className="relative">
+              <img
+                src="https://i.postimg.cc/TwQB4NWy/Nithin-img.png"
+                alt="Jakkula Nithin Raj"
+                className="w-10 h-10 rounded-full object-cover border-2 border-blue-400/50 shadow-lg"
+              />
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-400/20 to-purple-400/20 blur-sm"></div>
+            </div>
+            <span className="text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
               Nithin Raj
             </span>
-          </div>
+          </motion.div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -53,10 +60,10 @@ const Navbar = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-sm font-medium transition-all duration-300 hover:text-blue-600 dark:hover:text-blue-400 relative px-2 py-1 rounded-md ${
+                className={`text-sm font-medium transition-all duration-300 relative px-4 py-2 rounded-xl ${
                   activeSection === item.id
-                    ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
-                    : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
+                    ? 'text-blue-600 dark:text-blue-400 glass-active'
+                    : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 glass-nav-item'
                 }`}
               >
                 {item.label}
@@ -68,40 +75,46 @@ const Navbar = () => {
                 )}
               </button>
             ))}
-            <button
+            <motion.button
               onClick={toggleTheme}
-              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+              className="p-2.5 rounded-xl glass-button"
+              whileHover={{ scale: 1.1, rotate: 15 }}
+              whileTap={{ scale: 0.95 }}
             >
               {theme === 'light' ? (
                 <Moon className="w-5 h-5 text-gray-700 dark:text-gray-300" />
               ) : (
                 <Sun className="w-5 h-5 text-gray-700 dark:text-gray-300" />
               )}
-            </button>
+            </motion.button>
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center space-x-2">
-            <button
+            <motion.button
               onClick={toggleTheme}
-              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+              className="p-2.5 rounded-xl glass-button"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
             >
               {theme === 'light' ? (
                 <Moon className="w-5 h-5 text-gray-700 dark:text-gray-300" />
               ) : (
                 <Sun className="w-5 h-5 text-gray-700 dark:text-gray-300" />
               )}
-            </button>
-            <button
+            </motion.button>
+            <motion.button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+              className="p-2.5 rounded-xl glass-button"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
             >
               {isMenuOpen ? (
                 <X className="w-5 h-5 text-gray-700 dark:text-gray-300" />
               ) : (
                 <Menu className="w-5 h-5 text-gray-700 dark:text-gray-300" />
               )}
-            </button>
+            </motion.button>
           </div>
         </div>
       </div>
@@ -109,7 +122,7 @@ const Navbar = () => {
       {/* Mobile Navigation */}
       {isMenuOpen && (
         <motion.div
-          className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800"
+          className="md:hidden glass-mobile-menu border-t border-white/10 dark:border-gray-700/30"
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
@@ -119,10 +132,10 @@ const Navbar = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`block w-full text-left px-3 py-2 text-base font-medium rounded-md transition-colors duration-200 ${
+                className={`block w-full text-left px-4 py-3 text-base font-medium rounded-xl transition-all duration-300 ${
                   activeSection === item.id
-                    ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
-                    : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+                    ? 'text-blue-600 dark:text-blue-400 glass-active-mobile'
+                    : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 glass-nav-item-mobile'
                 }`}
               >
                 {item.label}
