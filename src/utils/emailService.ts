@@ -32,7 +32,14 @@ export const sendEmail = async (data: EmailData): Promise<boolean> => {
     const body = encodeURIComponent(
       `Hi Nithin,\n\nName: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`
     );
-    window.location.href = `mailto:nithinrajjakkula@gmail.com?subject=${subject}&body=${body}`;
+    // Use a temporary anchor element to open mailto without navigating away
+    const mailtoLink = `mailto:nithinrajjakkula@gmail.com?subject=${subject}&body=${body}`;
+    const anchor = document.createElement('a');
+    anchor.href = mailtoLink;
+    anchor.style.display = 'none';
+    document.body.appendChild(anchor);
+    anchor.click();
+    document.body.removeChild(anchor);
     return true; // Return true to show success, even though it opens email client
   }
 
@@ -55,7 +62,12 @@ export const sendEmail = async (data: EmailData): Promise<boolean> => {
       templateParams
     );
 
-    return response.status === 200;
+    // Throw error if status is not 200, so the catch block handles it
+    if (response.status !== 200) {
+      throw new Error(`Email sending failed with status: ${response.status}`);
+    }
+
+    return true;
   } catch (error) {
     console.error('Email sending failed:', error);
     throw error;
