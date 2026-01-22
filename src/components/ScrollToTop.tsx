@@ -30,7 +30,7 @@ const ScrollToTop = () => {
         exit={{ opacity: 0, scale: 0 }}
         whileHover={{ scale: 1.1, y: -5 }}
         whileTap={{ scale: 0.95 }}
-        className="fixed bottom-8 right-8 z-[99] p-4 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-2xl hover:shadow-blue-500/50 dark:shadow-purple-500/50 transition-all duration-300 backdrop-blur-sm border-2 border-white/20"
+        className="fixed bottom-8 right-8 z-[99] p-4 rounded-full bg-gradient-to-r from-blue-600/80 to-purple-600/80 text-white shadow-2xl hover:shadow-blue-500/50 dark:shadow-purple-500/50 transition-all duration-300 backdrop-blur-lg border-2 border-white/30 glass-btn"
         aria-label="Scroll to top"
       >
         <ArrowUp className="w-5 h-5" />
