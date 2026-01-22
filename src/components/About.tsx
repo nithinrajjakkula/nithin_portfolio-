@@ -62,7 +62,7 @@ const About = () => {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <div className="bg-white dark:bg-gray-900 rounded-2xl p-6 lg:p-8 shadow-xl border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-shadow duration-300 flex flex-col lg:flex-row items-center gap-8">
+          <div className="bg-white dark:bg-gray-900 rounded-2xl p-6 lg:p-8 shadow-xl border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-shadow duration-300 flex flex-col lg:flex-row items-center gap-8 glass-card">
             {/* Image */}
             <div className="w-full lg:w-1/3 flex justify-center">
              <img
