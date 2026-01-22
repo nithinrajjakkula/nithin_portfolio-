@@ -12,27 +12,56 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Animated Background */}
+      {/* Animated Background with gradient mesh */}
       <div className="absolute inset-0 hero-gradient">
         <div className="absolute inset-0 bg-black/20"></div>
+        {/* Animated gradient orbs */}
+        <motion.div
+          className="absolute top-20 left-20 w-72 h-72 bg-blue-500/30 rounded-full blur-3xl"
+          animate={{
+            x: [0, 100, 0],
+            y: [0, 50, 0],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        <motion.div
+          className="absolute bottom-20 right-20 w-96 h-96 bg-purple-500/30 rounded-full blur-3xl"
+          animate={{
+            x: [0, -100, 0],
+            y: [0, -50, 0],
+            scale: [1, 1.3, 1],
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
         {/* Floating particles */}
-        {[...Array(20)].map((_, i) => (
+        {[...Array(30)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-2 h-2 bg-white/20 rounded-full"
+            className="absolute w-1.5 h-1.5 bg-white/30 rounded-full"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
             }}
             animate={{
-              y: [0, -30, 0],
-              x: [0, Math.random() * 20 - 10, 0],
-              opacity: [0.3, 0.8, 0.3],
+              y: [0, -40, 0],
+              x: [0, Math.random() * 30 - 15, 0],
+              opacity: [0.2, 0.9, 0.2],
+              scale: [1, 1.5, 1],
             }}
             transition={{
-              duration: 3 + Math.random() * 2,
+              duration: 4 + Math.random() * 3,
               repeat: Infinity,
               ease: "easeInOut",
+              delay: Math.random() * 2,
             }}
           />
         ))}
@@ -45,22 +74,28 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
         >
           <motion.h1
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Hi, I'm{' '}
-            <span className="text-yellow-400 block sm:inline">Jakkula Nithin Raj</span>
+            <span className="block">Hi, I'm</span>
+            <span className="text-yellow-400 block bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400 bg-clip-text text-transparent animate-gradient">
+              Jakkula Nithin Raj
+            </span>
           </motion.h1>
           
           <motion.p
-            className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 font-light px-4"
+            className="text-xl sm:text-2xl md:text-3xl mb-6 sm:mb-8 font-light px-4 text-white/90"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            IT Enthusiast | Problem Solver | Developer
+            <span className="inline-block">IT Enthusiast</span>
+            <span className="mx-3 text-yellow-400">•</span>
+            <span className="inline-block">Problem Solver</span>
+            <span className="mx-3 text-yellow-400">•</span>
+            <span className="inline-block">Developer</span>
           </motion.p>
           
          <motion.div
@@ -69,21 +104,29 @@ const Hero = () => {
   animate={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.8, delay: 0.6 }}
 >
-  <button
+  <motion.button
     onClick={() => scrollToSection('projects')}
-    className="bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+    className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 sm:px-10 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl relative overflow-hidden group"
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
   >
-    Explore My Work
-  </button>
+    <span className="relative z-10">Explore My Work</span>
+    <motion.div
+      className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      initial={false}
+    />
+  </motion.button>
 
-  <a
+  <motion.a
     href="https://flowcv.com/resume/frwm61f3fsmu"
     target="_blank"
     rel="noopener noreferrer"
-    className="bg-white text-blue-600 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold border border-blue-600 hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg"
+    className="bg-white/10 backdrop-blur-md text-white px-8 sm:px-10 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold border-2 border-white/30 hover:bg-white/20 transition-all duration-300 shadow-xl hover:shadow-2xl relative overflow-hidden group"
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
   >
-    Download Resume
-  </a>
+    <span className="relative z-10">Download Resume</span>
+  </motion.a>
 </motion.div>
 
           
@@ -93,24 +136,34 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            <a
+            <motion.a
               href="https://www.linkedin.com/in/jakkulanithinraj2003"
-              className="p-2 sm:p-3 bg-white/20 rounded-full hover:bg-white/30 transition-all duration-300 transform hover:scale-110"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 sm:p-4 bg-white/10 backdrop-blur-md rounded-full hover:bg-white/20 border border-white/20 transition-all duration-300 shadow-lg hover:shadow-xl"
+              whileHover={{ scale: 1.15, rotate: 5 }}
+              whileTap={{ scale: 0.95 }}
             >
               <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href="https://github.com/nithinrajjakkula"
-              className="p-2 sm:p-3 bg-white/20 rounded-full hover:bg-white/30 transition-all duration-300 transform hover:scale-110"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 sm:p-4 bg-white/10 backdrop-blur-md rounded-full hover:bg-white/20 border border-white/20 transition-all duration-300 shadow-lg hover:shadow-xl"
+              whileHover={{ scale: 1.15, rotate: -5 }}
+              whileTap={{ scale: 0.95 }}
             >
               <Github className="w-5 h-5 sm:w-6 sm:h-6" />
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href="mailto:nithinrajjakkula@gmail.com"
-              className="p-2 sm:p-3 bg-white/20 rounded-full hover:bg-white/30 transition-all duration-300 transform hover:scale-110"
+              className="p-3 sm:p-4 bg-white/10 backdrop-blur-md rounded-full hover:bg-white/20 border border-white/20 transition-all duration-300 shadow-lg hover:shadow-xl"
+              whileHover={{ scale: 1.15, rotate: 5 }}
+              whileTap={{ scale: 0.95 }}
             >
               <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
-            </a>
+            </motion.a>
           </motion.div>
         </motion.div>
       </div>
