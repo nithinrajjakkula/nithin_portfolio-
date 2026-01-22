@@ -68,7 +68,7 @@ const Experience = () => {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-4 sm:p-6 lg:p-8 shadow-xl border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+              <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-4 sm:p-6 lg:p-8 shadow-xl border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 glass-card">
                 <div className="flex items-start justify-between mb-6">
                   <div className="flex items-center">
                     <div className="text-2xl sm:text-3xl lg:text-4xl mr-3 sm:mr-4">{exp.icon}</div>

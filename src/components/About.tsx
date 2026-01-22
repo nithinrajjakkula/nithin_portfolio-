@@ -102,7 +102,7 @@ const About = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="bg-white dark:bg-gray-900 rounded-2xl p-6 lg:p-8 shadow-xl border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-shadow duration-300">
+          <div className="bg-white dark:bg-gray-900 rounded-2xl p-6 lg:p-8 shadow-xl border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-shadow duration-300 glass-card">
             <div className="flex items-center mb-6">
               <GraduationCap className="w-8 h-8 text-blue-600 mr-3" />
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Education</h3>
