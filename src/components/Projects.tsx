@@ -46,7 +46,7 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-12 sm:py-16 lg:py-20 bg-white dark:bg-gray-900">
+    <section id="projects" className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -63,7 +63,7 @@ const Projects = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -71,14 +71,29 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group relative bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 sm:hover:-translate-y-2"
+              className="group relative bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-700 glass-card"
+              whileHover={{ scale: 1.02 }}
             >
-              <div className={`h-2 bg-gradient-to-r ${project.gradient}`}></div>
+              <div className={`h-1.5 bg-gradient-to-r ${project.gradient} relative overflow-hidden`}>
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                  animate={{
+                    x: ['-100%', '100%'],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
+                />
+              </div>
               
-              <div className="p-4 sm:p-6">
-                <div className="flex items-center mb-4">
-                  {project.icon}
-                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white ml-3">
+              <div className="p-6 sm:p-8">
+                <div className="flex items-center mb-5">
+                  <div className="p-2 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 rounded-xl mr-4 group-hover:scale-110 transition-transform duration-300">
+                    {project.icon}
+                  </div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">
                     {project.title}
                   </h3>
                 </div>
@@ -109,15 +124,23 @@ const Projects = () => {
                   ))}
                 </div>
                 
-                <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
-                  <button className="flex items-center justify-center px-3 sm:px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors text-sm">
-                    <Github className="w-4 h-4 mr-1 sm:mr-2" />
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6">
+                  <motion.button 
+                    className="flex items-center justify-center px-4 sm:px-5 py-2.5 bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 text-gray-700 dark:text-gray-300 rounded-xl hover:from-gray-200 hover:to-gray-300 dark:hover:from-gray-600 dark:hover:to-gray-500 transition-all duration-300 text-sm font-medium shadow-md hover:shadow-lg"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Github className="w-4 h-4 mr-2" />
                     Code
-                  </button>
-                  <button className="flex items-center justify-center px-3 sm:px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm">
-                    <ExternalLink className="w-4 h-4 mr-1 sm:mr-2" />
+                  </motion.button>
+                  <motion.button 
+                    className="flex items-center justify-center px-4 sm:px-5 py-2.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-300 text-sm font-medium shadow-md hover:shadow-lg flex-1 sm:flex-none"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <ExternalLink className="w-4 h-4 mr-2" />
                     Demo
-                  </button>
+                  </motion.button>
                 </div>
               </div>
             </motion.div>

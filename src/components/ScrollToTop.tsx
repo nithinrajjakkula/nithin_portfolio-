@@ -25,12 +25,15 @@ const ScrollToTop = () => {
     isVisible && (
       <motion.button
         onClick={scrollToTop}
-        whileHover={{ scale: 1.2 }}
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0 }}
+        whileHover={{ scale: 1.1, y: -5 }}
         whileTap={{ scale: 0.95 }}
-        className="fixed bottom-5 right-5 z-[99] p-3 rounded-full bg-indigo-600 text-white dark:bg-yellow-400 dark:text-black shadow-xl"
+        className="fixed bottom-8 right-8 z-[99] p-4 rounded-full bg-gradient-to-r from-blue-600/80 to-purple-600/80 text-white shadow-2xl hover:shadow-blue-500/50 dark:shadow-purple-500/50 transition-all duration-300 backdrop-blur-lg border-2 border-white/30 glass-btn"
         aria-label="Scroll to top"
       >
-        <ArrowUp />
+        <ArrowUp className="w-5 h-5" />
       </motion.button>
     )
   );

@@ -35,7 +35,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-12 sm:py-16 lg:py-20 bg-gray-50 dark:bg-gray-800">
+    <section id="about" className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Title */}
@@ -62,7 +62,7 @@ const About = () => {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <div className="bg-white dark:bg-gray-900 rounded-2xl p-6 lg:p-8 shadow-xl flex flex-col lg:flex-row items-center gap-8">
+          <div className="bg-white dark:bg-gray-900 rounded-2xl p-6 lg:p-8 shadow-xl border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-shadow duration-300 flex flex-col lg:flex-row items-center gap-8 glass-card">
             {/* Image */}
             <div className="w-full lg:w-1/3 flex justify-center">
              <img
@@ -102,7 +102,7 @@ const About = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="bg-white dark:bg-gray-900 rounded-2xl p-6 lg:p-8 shadow-xl">
+          <div className="bg-white dark:bg-gray-900 rounded-2xl p-6 lg:p-8 shadow-xl border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-shadow duration-300 glass-card">
             <div className="flex items-center mb-6">
               <GraduationCap className="w-8 h-8 text-blue-600 mr-3" />
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Education</h3>
